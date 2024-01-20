@@ -1,13 +1,496 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+
+
+:root {
+  --color-darkest: #343a40;
+  --color-dark: #495057;
+  --color-medium: #ced4da;
+  --color-light: #f1f3f5;
+
+  --color-theme: #1098ad;
+  --color-accent: #ffa94d;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  color: var(--color-light);
+  background-color: var(--color-darkest);
+}
+
+
+/* ----- HEADER ----- */
+
+header{
+  /* border: 3px solid red; */
+  height: 20vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+header h1{
+  font-family: "Codystar";
+  font-size: 7vw;
+  font-weight: bold;
+  /* border: 5px solid white; */
+}
+
+
+/* ----- HEADER ----- */
+
+
+
+
+
+
+
+/* ----- START-SCREEN ----- */
+
+.start_screen{
+  width: 70%;
+  height: 80vh;
+  border: 15px dotted red;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5em;
+}
+
+
+.start_screen h2{
+  font-size: 3.2vw;
+  /* border: 1px solid #fff; */
+  text-align: center;
+}
+
+
+.start_screen div{
+  /* border: 1px solid greenyellow; */
+  width: 35%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.start_screen div label{
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.start_screen div select{
+  padding: 5px;
+  cursor: pointer;
+  font-size: 1.2vw;
+  outline-style:hidden;
+}
+
+.start_screen button{
+  padding: 5px 10px;
+  font-size: 1.2vw;
+  cursor: pointer;
+  outline-style: none;
+  border-style: none;
+}
+
+
+
+@media(max-width: 700px){
+  header{
+    height: 30vh;
+  }
+
+  header h1{
+    font-size: 7.5vw;
+  }
+
+  .start_screen{
+    height: 70vh;
+  }
+
+  .start_screen h2{
+    font-size: 4vw;
+  }
+
+  .start_screen div{
+    width: 60%;
+  }
+
+  .start_screen div label{
+    font-size: 2.5vw;
+    font-weight: bold;
+  }
+
+  .start_screen div select{
+    font-size: 1.9vw;
+  }
+
+  .start_screen button{
+    font-size: 1.9vw;
+  }
+
+}
+
+
+
+@media(max-width: 400px){
+  header{
+    height: 30vh;
+  }
+
+  header h1{
+    font-size: 8vw;
+  }
+
+  .start_screen{
+    height: 70vh;
+    width: 100%;
+  }
+
+  .start_screen h2{
+    font-size: 7vw;
+  }
+
+  .start_screen div{
+    width: 70%;
+  }
+
+  .start_screen div label{
+    font-size: 4vw;
+    font-weight: bold;
+  }
+
+  .start_screen div select{
+    font-size: 3vw;
+  }
+
+  .start_screen button{
+    font-size: 4vw;
+  }
+
+}
+
+
+
+
+
+
+
+
+/* ----- START-SCREEN ----- */
+
+
+
+
+/* ----- ANSWER-CONTAINER ----- */
+
+.answer_container{
+  /* border: 1px solid red; */
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+.answer_container h3{
+  font-size: 1.8vw;
+  height: 15%;
+  /* border: 3px solid #fff; */
+}
+
+
+.answer_container .one{
+  /* border: 2px solid yellow; */
+  width: 100%;
+  height: 60%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+  /* ----- ANSWER'S BUTTONS ----- */
+
+.answer-btn{
+  padding: 10px 0;
+  width: 80%;
+  border-radius: 25px;
+  outline-style: none;
+  border-style: none;
+  cursor: pointer;
+  font-size: 1.5vw;
+  background-color: #495057;
+  color: #fff;
+  transition: all ease-in-out .4s;
+}
+
+
+.answer_container div .answer-btn:not([disabled]):hover{
+  background-color: #1098ad;
+}
+
+
+.answer_container div .answer-btn[disabled]:hover{
+  cursor: not-allowed;
+}
+
+.picked{
+  transform: translateX(1em);
+}
+
+.correct{
+  background-color: #1098ad;
+}
+
+
+.incorrect{
+  background-color: orange;
+}
+
+
+  /* ----- ANSWER'S BUTTONS ----- */
+
+
+.answer_container .two{
+  width: 100%;
+  /* border: 2px dotted purple; */
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+
+
+  /* ----- TIMER ----- */
+
+.timer{
+  font-size: 1.4vw;
+  width: 4em;
+  display: grid;
+  place-items: center;
+  background-color: #495057;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+
+  /* ----- TIMER ----- */
+
+
+
+  /* ----- NEXT-FINISH BUTTON ----- */
+
+  .next-finish{
+    padding: 5px 10px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: transform ease-in-out .3s;
+  }
+
+  .next-finish:hover{
+    transform: translateY(-3px);
+  }
+
+  /* ----- NEXT-FINISH BUTTON ----- */
+
+
+  /* ----- SCOREBAR ----- */
+
+  .scoreBar-container{
+    /* border: 3px dashed coral; */
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .scoreBar-container .scoreBar{
+    height: 50%;
+    width: 90%;
+    background-color: #495057;
+    border-radius: 15px;
+
+  }
+
+  .scoreBar-container .scoreBar .fill-scoreBar{
+    display: block;
+    width: 0%;
+    height: 100%;
+    background-color: #1098ad;
+    border-radius: 15px;
+  }
+
+
+  .scoreBar-container div:nth-child(2){
+    /* border: 2px solid red; */
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    align-items: end;
+  }
+
+  .scoreBar-container div:nth-child(2) p{
+    font-size: 1.8vw;
+  }
+
+   
+@media(max-width: 700px){
+  .answer_container{
+    height: 70vh;
+  }
+
+  .answer_container h3{
+    font-size: 2.3vw;
+  }
+
+  .answer-btn{
+    font-size: 2.1vw;
+  }
+
+  .timer{
+    font-size: 2vw;
+  }
+
+  .scoreBar-container div:nth-child(2) p{
+    font-size: 2vw;
+  }
+}
+
+
+@media(max-width: 500px){
+  .answer_container{
+    height: 70vh;
+    width: 100%;
+  }
+
+  .answer_container h3{
+    font-size: 3.5vw;
+    margin-left: 5px;
+  }
+
+  .answer-btn{
+    font-size: 3.5vw;
+  }
+
+  .timer{
+    font-size: 3.5vw;
+  }
+
+  .scoreBar-container div:nth-child(2) p{
+    font-size: 4vw;
+  }
+}
+
+  /* ----- SCOREBAR ----- */
+
+
+/* ----- ANSWER-CONTAINER ----- */
+
+
+
+
+
+
+
+
+/* ----- LOADING ----- */
+
+.loading{
+  width: 100%;
+  height: 70vh;
+  font-size: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid #fff; */
+}
+
+.loading span:nth-child(1){
+  animation: loading 1s infinite;
+}
+
+.loading span:nth-child(2){
+  animation: loading 1.3s infinite;
+}
+
+.loading span:nth-child(3){
+  animation: loading 1s infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(-10px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+
+/* ----- LOADING ----- */
+
+
+
+
+
+
+/* ----- FinishScreen ----- */
+
+.highscore-container{
+  border: 3px solid red;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+}
+
+
+.highscore-container p{
+  font-size: 4vw;
+  background-color: #1098ad;
+  padding: 5px 100px;
+  border-radius: 35px;
+}
+
+
+.highscore-container button{
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: transform ease-in-out .3s;
+}
+
+.highscore-container button:hover{
+  transform: translateY(-3px);
+}
+
+/* ----- FinishScreen ----- */
