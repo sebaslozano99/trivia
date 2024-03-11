@@ -464,7 +464,7 @@ header h1{
 /* ----- FinishScreen ----- */
 
 .highscore-container{
-  border: 3px solid red;
+  /* border: 3px solid red; */
   width: 100%;
   height: 80vh;
   display: flex;

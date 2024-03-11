@@ -1,6 +1,8 @@
-// import React, { useState } from 'react'
+import { UseQuestionContext } from "../questionsProvider/QuestionsProvider"
 
-const StartScreen = ({category, difficulty ,dispatch}) => {
+const StartScreen = () => {
+
+  const { category, difficulty, dispatch } = UseQuestionContext();
 
   return (
     <section className='start_screen'>
@@ -20,7 +22,7 @@ const StartScreen = ({category, difficulty ,dispatch}) => {
 
       <div>
         <label>Difficulty</label>
-          <select value={difficulty} onChange={(e) => dispatch({type: "changeDifficulty", payload: e.target.value})} >
+          <select value={difficulty} onChange={(e) => dispatch({type: "changeDifficulty", payload: String(e.target.value)})} >
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>

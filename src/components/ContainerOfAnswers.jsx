@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Answers from "./Answers";
 import { v4 as uuidv4 } from 'uuid';
+import { UseQuestionContext } from '../questionsProvider/QuestionsProvider';
 
 
 
@@ -19,7 +20,7 @@ function shuffler(array){
 
 
 const ContainerOfAnswers = ({dataFromApi, index, answer, dispatch}) => {
-  
+
   const [answers, setAnswers] = useState(shuffler([...dataFromApi[index]?.incorrect_answers ?? "hello", dataFromApi[index]?.correct_answer]));
 
   useEffect(() => {

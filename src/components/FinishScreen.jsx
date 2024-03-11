@@ -1,8 +1,9 @@
 import React from 'react'
+import { UseQuestionContext } from '../questionsProvider/QuestionsProvider'
 
-const FinishScreen = ({highscore, dispatch}) => {
+const FinishScreen = () => {
 
-
+  const { highscore, dispatch } = UseQuestionContext();
 
   return (
     <div className='highscore-container'>

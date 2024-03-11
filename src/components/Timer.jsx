@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
+import { UseQuestionContext } from '../questionsProvider/QuestionsProvider';
 
-const Timer = ({minutes, seconds, dispatch}) => {
+const Timer = () => {
+
+    const { minutes, seconds, dispatch } = UseQuestionContext();
 
     useEffect(() => {
         const id = setInterval(() => {

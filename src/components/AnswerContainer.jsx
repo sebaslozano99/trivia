@@ -1,10 +1,12 @@
 import React from "react";
 import ContainerOfAnswers from "./ContainerOfAnswers";
 import ScoreBar from "./ScoreBar";
+import { UseQuestionContext } from "../questionsProvider/QuestionsProvider";
 
 
-const AnswerContainer = ({dataFromApi, index, answer, dispatch, points, children}) => {
+const AnswerContainer = ({children}) => {
 
+  const { dataFromApi, index, answer, dispatch } = UseQuestionContext();
   const question = dataFromApi[index]?.question;
 
   function nextOrFinish(){
@@ -25,8 +27,7 @@ const AnswerContainer = ({dataFromApi, index, answer, dispatch, points, children
         {question}
       </h3>
 
-      <ScoreBar points={points} dataFromApi={dataFromApi} index={index} />
-
+      <ScoreBar  />
       <ContainerOfAnswers dataFromApi={dataFromApi} index={index} answer={answer} dispatch={dispatch} />
 
       <div className="two">

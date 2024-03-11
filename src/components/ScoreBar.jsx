@@ -1,7 +1,10 @@
 import React from 'react'
+import { UseQuestionContext } from '../questionsProvider/QuestionsProvider';
 
-const ScoreBar = ({points, dataFromApi, index}) => {
-    const numQues = dataFromApi.length;
+const ScoreBar = () => {
+
+  const { points, dataFromApi, index } = UseQuestionContext();
+  const numQues = dataFromApi.length;
   return (
     <div className='scoreBar-container'>
         <div className='scoreBar'>
